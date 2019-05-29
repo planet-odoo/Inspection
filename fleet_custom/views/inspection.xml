@@ -1,0 +1,25 @@
+<odoo>
+    <record id="inherited_fleet_vehicle_form" model="ir.ui.view">
+        <field name="name">Fleet Custom</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="show_annual_inspection"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square"
+                        string="Annual Inspection"
+                        help="Annual Inspetion for this vehicle">
+                </button>
+                <button name="show_daily_inspection"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square"
+                        string="Daily Inspection"
+                        help="Daily Inspetion for this vehicle">
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
