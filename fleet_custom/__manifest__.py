@@ -8,7 +8,8 @@
     "website": "http://www.planet-odoo.com",
     "depends": ["base", "fleet",],
     "data": [
-        'views/inspection.xml'
+        'views/inspection.xml',
+        'views/daily_inspection.xml',
     ],
     "qweb": [],
     "installable": True,
