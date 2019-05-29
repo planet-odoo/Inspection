@@ -1,5 +1,6 @@
 from odoo import api,fields,models,_
 
+
 class AnnualInspection(models.Model):
     _name = 'annual.inspection'
 
@@ -28,7 +29,40 @@ class AnnualInspection(models.Model):
     hydraulic_brakes = fields.Boolean('Frenos Hidráulicos')
     warning_light = fields.Boolean('Luz Advertencia')
     #Guides
-
+    game = fields.Boolean('Juego')
+    guide_column = fields.Boolean('Columna del Guía')
+    forward_train = fields.Boolean('Tren Delantero')
+    guide_box = fields.Boolean('Caja del Guía')
+    pitman = fields.Boolean('Pitman')
+    dollies = fields.Boolean('Muñequillas/Bolt Joints')
+    terminals = fields.Boolean('Terminales/Drag Links')
+    nuts = fields.Boolean('Tuercas')
+    liquid = fields.Boolean('Líquido "Power Steering"')
+    #Windshield(Parabrisas)
+    #Windshield Wipers(Limpiaparabrisas)
+    #Gas(Combustible)
+    leaks = fields.Boolean('Filtaciones')
+    cover_the_tank = fields.Boolean('Tapa el Tanque')
+    tank_mount = fields.Boolean('Montura del Tanque')
+    #Lights(Luces)
+    front_directional = fields.Boolean('Direccionales delanteras')
+    id_clear_front = fields.Boolean('ID/Despejo Delanteras')
+    right_marker_light = fields.Boolean('Luz Marcadora Derecha')
+    left_marker_light = fields.Boolean('Luz Marcadora Izquierda')
+    rear_directionals = fields.Boolean('Direccionales Traseras')
+    stop_light = fields.Boolean('Luz de Pare "STOP“')
+    id_clear_backs = fields.Boolean('ID/Despejo Traseras')
+    reflectors = fields.Boolean('Reflectores')
+    #Coupler(Acoplador)
+    fifth_wheel = fields.Boolean('Quinta Rueda')
+    pintle_hook = fields.Boolean('Pintle Hook')
+    draw_bar_eye_tounge = fields.Boolean('Draw Bar Eye/Tongue')
+    chains_cable = fields.Boolean('Cadenas/Cables')
+    #Exhaust Pipe/Muffler('Tubo Escape/muffler')
+    escapes = fields.Boolean('Escapes')
+    proper_installation = fields.Boolean('Instalación adecuada')
+    #Secure Charging (Carga segura)
+    chain = fields.Boolean('Cadena')
 
 
 
