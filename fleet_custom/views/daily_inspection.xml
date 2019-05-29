@@ -1,0 +1,131 @@
+<odoo>
+    <!--tree view-->
+    <record id="daily_inspection_tree" model="ir.ui.view">
+        <field name="name">daily.inspection.tree</field>
+        <field name="model">daily.inspection</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="driver"/>
+                <field name="unity"/>
+                <field name="clapboard"/>
+                <field name="date"/>
+                <field name="am_time"/>
+                <field name="pm_time"/>
+                <field name="am_mileage"/>
+                <field name="pm_mileage"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    form view-->
+    <record id="daily_inspection_form" model="ir.ui.view">
+        <field name="name">daily.inspection.form</field>
+        <field name="model">daily.inspection</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="driver"/>
+                            <field name="unity"/>
+                            <field name="clapboard"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="am_time" widget="float_time"/>
+                            <field name="pm_time" widget="float_time"/>
+                            <field name="am_mileage" widget="float_time"/>
+                            <field name="pm_mileage" widget="float_time"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Equipo Seguridad">
+                            <group>
+                                <group>
+                                    <field name="safety_equipment" />
+                                    <field name="fire_extinguisher" />
+                                </group>
+                                <group>
+                                    <field name="flag" />
+                                    <field name="reflectors" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Cabina">
+                            <group>
+                                <group>
+                                    <field name="safety_belt_and_seats" />
+                                    <field name="guide_and_management_system" />
+                                    <field name="rear_view_mirrors" />
+                                    <field name="horn" />
+                                    <field name="marbete" />
+                                    <field name="windshield_and_windshield_wipers" />
+                                    <field name="clutch_system_pedal" />
+                                </group>
+                                <group>
+                                    <field name="low_brake_air_pressure_alarm" />
+                                    <field name="water_temperature" />
+                                    <field name="air_pressure" />
+                                    <field name="oil_pressure_fuel_other" />
+                                    <field name="voltage_indicator" />
+                                    <field name="interior_cleaning" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Luces">
+                            <group>
+                                <group>
+                                    <field name="front_and_rear_lights" />
+                                    <field name="clapboard_lights" />
+                                </group>
+                                <group>
+                                    <field name="signals_front_and_rear" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Exterior y Mecánica">
+                            <group>
+                                <group>
+                                    <field name="foot_and_handbrakes" />
+                                    <field name="rubber_bands_and_rings" />
+                                    <field name="water_and_oil_lichens" />
+                                    <field name="strange_noises_in_the_engine" />
+                                    <field name="forward_train" />
+                                    <field name="fuel_tank_and_tank_lid" />
+                                </group>
+                                <group>
+                                    <field name="air_pressure_in_the_wheels" />
+                                    <field name="oil_and_filter" />
+                                    <field name="brake_hose" />
+                                    <field name="cargo_and_mooring_devices" />
+                                    <field name="fifth_wheel_or_pintle_hook" />
+                                    <field name="exterior_cleaning" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Otros">
+                            <group>
+                                <group>
+                                    <field name="others" />
+                                </group>
+                                <group></group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_daily_inspection_list" model="ir.actions.act_window">
+        <field name="name">Daily Inspection</field>
+        <field name="res_model">daily.inspection</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="daily_inspection_tree"/>
+    </record>
+
+    <menuitem id="daily_inspection_menu_root" name="Daily Inspection"/>
+    <menuitem id="daily_inspection_menu_config" parent="fleet_custom.daily_inspection_menu_root" name="Daily Inspection" action="fleet_custom.action_daily_inspection_list" groups="base.group_user"/>
+
+</odoo>

@@ -33,4 +33,62 @@ class AnnualInspection(models.Model):
 
 
 class DailyInspection(models.Model):
+
     _name = 'daily.inspection'
+
+    driver = fields.Many2one('res.partner', "Chofer")
+    unity = fields.Integer("Unidad")
+    clapboard = fields.Char("Tablilla")
+    date = fields.Date("Fecha")
+    am_time = fields.Float("Hora AM")
+    pm_time = fields.Float("Hora PM")
+    am_mileage = fields.Float("Millaje AM")
+    pm_mileage = fields.Float("Millaje PM")
+
+    #Security Team
+
+    safety_equipment = fields.Boolean("Equipo de Seguridad (PPE)")
+    fire_extinguisher = fields.Boolean("Extintor de Incendios")
+    flag = fields.Boolean("Bandera")
+    reflectors = fields.Boolean("Reflectores")
+
+    #Cabin
+
+    safety_belt_and_seats = fields.Boolean("Cinturón de Seguridad y Asientos")
+    guide_and_management_system = fields.Boolean("Guía y Sistema de Dirección")
+    rear_view_mirrors = fields.Boolean("Espejos Retrovisores")
+    horn = fields.Boolean("Bocina")
+    marbete = fields.Boolean("Marbete")
+    windshield_and_windshield_wipers = fields.Boolean("Parabrisas y Limpia Parabrisas (Wipers)")
+    clutch_system_pedal = fields.Boolean("Pedal de Sistema de Embrague (Clutch)")
+    low_brake_air_pressure_alarm = fields.Boolean("Alarma Baja Presión de Aire en Frenos")
+    water_temperature = fields.Boolean("Temperatura del Agua")
+    air_pressure = fields.Boolean("Presión de Aire")
+    oil_pressure_fuel_other = fields.Boolean("Presión de Aceite, Combustible, Otros")
+    voltage_indicator = fields.Boolean("Indicador de Voltaje")
+    interior_cleaning = fields.Boolean("Limpieza Interior")
+
+    #Lights
+
+    front_and_rear_lights = fields.Boolean("Luces Delanteras y Traseras")
+    clapboard_lights = fields.Boolean("Luces de Tablilla")
+    signals_front_and_rear = fields.Boolean("Señales (Delanteras y Traseras)")
+
+    #Exterior and Mechanics
+
+    foot_and_handbrakes = fields.Boolean("Frenos de Pie y de Mano")
+    rubber_bands_and_rings = fields.Boolean("Gomas y Aros")
+    water_and_oil_lichens = fields.Boolean("Liqueos de Agua y de Aceite")
+    strange_noises_in_the_engine = fields.Boolean("Ruidos Extraños en el Motor")
+    forward_train = fields.Boolean("Tren Delantero")
+    fuel_tank_and_tank_lid = fields.Boolean("Tanque de Combustible y Tapa del Tanque")
+    air_pressure_in_the_wheels = fields.Boolean("Presión de Aire en las Ruedas")
+    oil_and_filter = fields.Boolean("Aceite y Filtro")
+    brake_hose = fields.Boolean("Manguera de Frenos")
+    cargo_and_mooring_devices = fields.Boolean("Carga y Dispositivos de Amarre")
+    fifth_wheel_or_pintle_hook = fields.Boolean("Quinta Rueda / Pintle Hook")
+    exterior_cleaning = fields.Boolean("Limpieza Exterior")
+
+    #Others
+
+    others = fields.Boolean("Otros")
