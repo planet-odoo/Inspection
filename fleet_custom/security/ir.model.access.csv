@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_annual_inspection,access.annual.inspection,model_annual_inspection,,1,1,1,1
+access_daily_inspection,access.daily.inspection,model_daily_inspection,,1,1,1,1

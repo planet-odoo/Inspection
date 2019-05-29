@@ -17,7 +17,7 @@
         </field>
     </record>
 
-    <!--    form view-->
+    <!--form view-->
     <record id="daily_inspection_form" model="ir.ui.view">
         <field name="name">daily.inspection.form</field>
         <field name="model">daily.inspection</field>
@@ -38,6 +38,10 @@
                             <field name="pm_mileage" widget="float_time"/>
                         </group>
                     </group>
+                    <label for="daily_digital_signature" string="Signature" class="oe_edit_only" />
+                    <h3>
+                        <field name="daily_digital_signature" widget="signature"/>
+                    </h3>
                     <notebook>
                         <page string="Equipo Seguridad">
                             <group>
@@ -117,15 +121,12 @@
         </field>
     </record>
 
-    <record id="action_daily_inspection_list" model="ir.actions.act_window">
+    <record id="action_daily_inspection" model="ir.actions.act_window">
         <field name="name">Daily Inspection</field>
         <field name="res_model">daily.inspection</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="daily_inspection_tree"/>
     </record>
-
-    <menuitem id="daily_inspection_menu_root" name="Daily Inspection"/>
-    <menuitem id="daily_inspection_menu_config" parent="fleet_custom.daily_inspection_menu_root" name="Daily Inspection" action="fleet_custom.action_daily_inspection_list" groups="base.group_user"/>
 
 </odoo>

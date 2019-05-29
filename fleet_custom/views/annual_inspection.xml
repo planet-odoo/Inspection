@@ -1,0 +1,166 @@
+<odoo>
+    <record id="inspection_view" model="ir.ui.view">
+        <field name="name">inspection.view</field>
+        <field name="model">annual.inspection</field>
+        <field eval="2" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Annual Inspection">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="owner"/>
+                            <field name="date"/>
+                            <field name="hour"/>
+                            <field name="address"/>
+                            <field name="license"/>
+                            <field name="operator"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                            <field name="clapboard"/>
+                            <field name="vin"/>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="year"/>
+                        </group>
+                    </group>
+                    <label for="annual_digital_signature" string="Signature" class="oe_edit_only" />
+                    <h3>
+                        <field name="annual_digital_signature" widget="signature"/>
+                    </h3>
+                    <notebook name ="Inspected Parts in the Vehicle:" string="Partes Inspeccionadas en el Vehículo:">
+                        <page name="Brakes" string="Frenos">
+                            <group>
+                                <group>
+                                    <field name = 'adjustment'/>
+                                    <field name = 'drum_disc'/>
+                                    <field name = 'sleeves_tubes'/>
+                                    <field name = 'bands'/>
+                                    <field name = 'tractor_prtn_valve'/>
+                                    <field name = 'compressor'/>
+                                </group>
+                                <group>
+                                    <field name = 'service_brakes'/>
+                                    <field name = 'parking_brakes'/>
+                                    <field name = 'electric_brakes'/>
+                                    <field name = 'hydraulic_brakes'/>
+                                    <field name = 'warning_light'/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="Guides" string="Guía">
+                            <group>
+                                <group>
+                                    <field name = 'game'/>
+                                    <field name = 'guide_column'/>
+                                    <field name = 'forward_train'/>
+                                    <field name = 'guide_box'/>
+                                    <field name = 'pitman'/>
+                                </group>
+                                <group>
+                                    <field name = 'dollies'/>
+                                    <field name = 'terminals'/>
+                                    <field name = 'nuts'/>
+                                    <field name = 'liquid'/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="Windshield" string="Parabrisas">
+                            <group>
+                                <field name = 'windshield'/>
+                            </group>
+                        </page>
+                        <page name="Windshield Wipers" string="Limpiaparabrisas">
+                            <group>
+                                <field name = 'windshield_wipers'/>
+                            </group>
+                        </page>
+                        <page name="Gas" string="Combustible">
+                            <group>
+                                <field name = 'leaks'/>
+                                <field name = 'cover_the_tank'/>
+                                <field name = 'tank_mount'/>
+                            </group>
+                        </page>
+                        <page name="Lights" string="Luces">
+                            <group>
+                                <group>
+                                    <field name = 'front_directional'/>
+                                    <field name = 'id_clear_front'/>
+                                    <group>
+                                        <field name = 'right_marker_light'/>
+                                        <field name = 'left_marker_light'/>
+                                    </group>
+                                </group>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name = 'rear_directionals'/>
+                                    <field name = 'stop_light'/>
+                                </group>
+                                <group>
+                                    <field name = 'id_clear_backs'/>
+                                    <field name = 'reflectors'/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="Coupler" string="Acoplador">
+                            <group>
+                                <group>
+                                    <field name = 'fifth_wheel'/>
+                                    <field name = 'pintle_hook'/>
+                                </group>
+                                <group>
+                                    <field name = 'draw_bar_eye_tounge'/>
+                                    <field name = 'chains_cable'/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="Exhaust Pipe/Muffler" string="Tubo Escape/muffler">
+                            <group>
+                                <field name = 'escapes'/>
+                                <field name = 'proper_installation'/>
+                            </group>
+                        </page>
+                        <page name="Secure Charging" string="Carga segura">
+                            <group>
+                                <field name = 'chain'/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="inspection_tree_view" model="ir.ui.view">
+        <field name="name">inspection.tree.view</field>
+        <field name="model">annual.inspection</field>
+        <field name="arch" type="xml">
+            <tree string="Annual Inspection">
+                <field name="owner"/>
+                <field name="date"/>
+                <field name="hour"/>
+                <field name="address"/>
+                <field name="license"/>
+                <field name="operator"/>
+                <field name="name"/>
+                <field name="clapboard"/>
+                <field name="vin"/>
+                <field name="brand"/>
+                <field name="model"/>
+                <field name="year"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_annual_inspection" model="ir.actions.act_window">
+        <field name="name">Annual Inspection</field>
+        <field name="res_model">annual.inspection</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="inspection_tree_view"/>
+    </record>
+
+
+</odoo>
