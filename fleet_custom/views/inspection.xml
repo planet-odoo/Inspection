@@ -9,17 +9,17 @@
                         type="object"
                         class="oe_stat_button"
                         icon="fa-pencil-square"
-                        string="Annual Inspection"
-                        context="{'xml_id':'action_annual_inspection'}"
-                        help="Annual Inspetion for this vehicle">
+                        string="Daily Inspection"
+                        context="{'xml_id':'action_daily_inspection'}"
+                        help="Daily Inspetion for this vehicle">
                 </button>
                 <button name="return_action_for_inspection"
                         type="object"
                         class="oe_stat_button"
                         icon="fa-pencil-square"
-                        string="Daily Inspection"
-                        context="{'xml_id':'action_daily_inspection'}"
-                        help="Daily Inspetion for this vehicle">
+                        string="Annual Inspection"
+                        context="{'xml_id':'action_annual_inspection'}"
+                        help="Annual Inspetion for this vehicle">
                 </button>
             </xpath>
         </field>

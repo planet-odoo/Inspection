@@ -8,9 +8,14 @@
                 <sheet>
                     <group>
                         <group>
+                            <field name="vehicle_id"/>
                             <field name="owner"/>
                             <field name="date"/>
-                            <field name="hour"/>
+                            <div class="o_address_format" cols="6" colspan="2">
+                                <label for="hour" string="Time" style="padding-right:23%"/>
+                                <field name="hour" widget="float_time" style="position: relative;width:10%!important;min-width: 10px;"/>
+                                <field name="am_pm" style="width:10%"/>
+                            </div>
                             <field name="address"/>
                             <field name="license"/>
                             <field name="operator"/>
@@ -24,111 +29,88 @@
                             <field name="year"/>
                         </group>
                     </group>
-                    <label for="annual_digital_signature" string="Signature" class="oe_edit_only" />
+                    <group style="width:100%">
+                        <group style="float:left;width:33%">
+                            <!-- <page name="Brakes" string="Frenos">-->
+                            <separator string="Frenos"/>
+                            <field name = 'adjustment'/>
+                            <field name = 'drum_disc'/>
+                            <field name = 'sleeves_tubes'/>
+                            <field name = 'bands'/>
+                            <field name = 'tractor_prtn_valve'/>
+                            <field name = 'compressor'/>
+                            <field name = 'service_brakes'/>
+                            <field name = 'parking_brakes'/>
+                            <field name = 'electric_brakes'/>
+                            <field name = 'hydraulic_brakes'/>
+                            <field name = 'warning_light'/>
+                            <!-- <page name="Windshield" string="Parabrisas">-->
+                            <separator string="Parabrisas"/>
+                            <field name = 'windshield'/>
+                            <!--<page name="Secure Charging" string="Carga segura">-->
+                            <separator string="Carga segura"/>
+                            <field name = 'chain'/>
+                        </group>
+                        <group style="float:left;width:33%">
+                            <!-- <page name="Guides" string="Guía">-->
+                            <separator string="Guía"/>
+                            <field name = 'game'/>
+                            <field name = 'guide_column'/>
+                            <field name = 'forward_train'/>
+                            <field name = 'guide_box'/>
+                            <field name = 'pitman'/>
+                            <field name = 'dollies'/>
+                            <field name = 'terminals'/>
+                            <field name = 'nuts'/>
+                            <field name = 'liquid'/>
+                            <!-- <page name="Gas" string="Combustible">-->
+                            <separator string="Combustible"/>
+                            <field name = 'leaks'/>
+                            <field name = 'cover_the_tank'/>
+                            <field name = 'tank_mount'/>
+                            <!--<page name="Windshield Wipers" string="Limpiaparabrisas">-->
+                            <separator string="Limpiaparabrisas"/>
+                            <field name = 'windshield_wipers'/>
+                        </group>
+                        <group style="float:left;width:33%">
+                            <!-- <page name="Lights" string="Luces">-->
+                            <separator string="Luces"/>
+                            <field name = 'front_directional'/>
+                            <field name = 'id_clear_front'/>
+                            <field name = 'right_marker_light'/>
+                            <field name = 'left_marker_light'/>
+                            <field name = 'rear_directionals'/>
+                            <field name = 'stop_light'/>
+                            <field name = 'id_clear_backs'/>
+                            <field name = 'reflectors'/>
+                            <!-- <page name="Coupler" string="Acoplador">-->
+                            <separator string="Acoplador"/>
+                            <field name = 'fifth_wheel'/>
+                            <field name = 'pintle_hook'/>
+                            <field name = 'draw_bar_eye_tounge'/>
+                            <field name = 'chains_cable'/>
+                            <!--<page name="Exhaust Pipe/Muffler" string="Tubo Escape/muffler">-->
+                            <separator string="Tubo Escape/muffler"/>
+                            <field name = 'escapes'/>
+                            <field name = 'proper_installation'/>
+                        </group>
+                    </group>
+                    <p>
+                        El abajo firmante certifica que realiza esta inspección y conoce los requisitos del apéndice G del subcapítulo B del "Federal Motor Carrier Safety Regulations" (FMCSR) así como las exigencias de las leyes estatales compatibles,
+                        que tiene las herramientas necesarias, y tiene la destreza para completar esta inspección, según el 49CFR 396.17:
+                        Certifico que he inspeccionado este vehículo en todas las partes mencionadas y lo encuentro apto para su operación y de acuerdo a la 396.21
+                        Información contenida en este documento estará disponible en la oficina del taller de esta empresa, y en el vehículo; copia de este documento pegatina y cumpliendo con la 49 CFR 396.17.
+                    </p>
+                    <label for="annual_digital_signature" string="Inspector Signature" class="oe_edit_only" />
                     <h3>
                         <field name="annual_digital_signature" widget="signature"/>
                     </h3>
-                    <notebook name ="Inspected Parts in the Vehicle:" string="Partes Inspeccionadas en el Vehículo:">
-                        <page name="Brakes" string="Frenos">
-                            <group>
-                                <group>
-                                    <field name = 'adjustment'/>
-                                    <field name = 'drum_disc'/>
-                                    <field name = 'sleeves_tubes'/>
-                                    <field name = 'bands'/>
-                                    <field name = 'tractor_prtn_valve'/>
-                                    <field name = 'compressor'/>
-                                </group>
-                                <group>
-                                    <field name = 'service_brakes'/>
-                                    <field name = 'parking_brakes'/>
-                                    <field name = 'electric_brakes'/>
-                                    <field name = 'hydraulic_brakes'/>
-                                    <field name = 'warning_light'/>
-                                </group>
-                            </group>
-                        </page>
-                        <page name="Guides" string="Guía">
-                            <group>
-                                <group>
-                                    <field name = 'game'/>
-                                    <field name = 'guide_column'/>
-                                    <field name = 'forward_train'/>
-                                    <field name = 'guide_box'/>
-                                    <field name = 'pitman'/>
-                                </group>
-                                <group>
-                                    <field name = 'dollies'/>
-                                    <field name = 'terminals'/>
-                                    <field name = 'nuts'/>
-                                    <field name = 'liquid'/>
-                                </group>
-                            </group>
-                        </page>
-                        <page name="Windshield" string="Parabrisas">
-                            <group>
-                                <field name = 'windshield'/>
-                            </group>
-                        </page>
-                        <page name="Windshield Wipers" string="Limpiaparabrisas">
-                            <group>
-                                <field name = 'windshield_wipers'/>
-                            </group>
-                        </page>
-                        <page name="Gas" string="Combustible">
-                            <group>
-                                <field name = 'leaks'/>
-                                <field name = 'cover_the_tank'/>
-                                <field name = 'tank_mount'/>
-                            </group>
-                        </page>
-                        <page name="Lights" string="Luces">
-                            <group>
-                                <group>
-                                    <field name = 'front_directional'/>
-                                    <field name = 'id_clear_front'/>
-                                    <group>
-                                        <field name = 'right_marker_light'/>
-                                        <field name = 'left_marker_light'/>
-                                    </group>
-                                </group>
-                            </group>
-                            <group>
-                                <group>
-                                    <field name = 'rear_directionals'/>
-                                    <field name = 'stop_light'/>
-                                </group>
-                                <group>
-                                    <field name = 'id_clear_backs'/>
-                                    <field name = 'reflectors'/>
-                                </group>
-                            </group>
-                        </page>
-                        <page name="Coupler" string="Acoplador">
-                            <group>
-                                <group>
-                                    <field name = 'fifth_wheel'/>
-                                    <field name = 'pintle_hook'/>
-                                </group>
-                                <group>
-                                    <field name = 'draw_bar_eye_tounge'/>
-                                    <field name = 'chains_cable'/>
-                                </group>
-                            </group>
-                        </page>
-                        <page name="Exhaust Pipe/Muffler" string="Tubo Escape/muffler">
-                            <group>
-                                <field name = 'escapes'/>
-                                <field name = 'proper_installation'/>
-                            </group>
-                        </page>
-                        <page name="Secure Charging" string="Carga segura">
-                            <group>
-                                <field name = 'chain'/>
-                            </group>
-                        </page>
-                    </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>
