@@ -137,38 +137,154 @@ class DailyInspection(models.Model):
     reflectors_bt_comm = fields.Char('Comment')
     reflectors_at_comm = fields.Char('Comment')
     #Cabin
-    safety_belt_and_seats = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Cinturón de Seguridad y Asientos")
-    guide_and_management_system = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Guía y Sistema de Dirección")
-    rear_view_mirrors = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Espejos Retrovisores")
-    horn = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Bocina")
-    marbete = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Marbete")
-    windshield_and_windshield_wipers = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Parabrisas y Limpia Parabrisas (Wipers)")
-    clutch_system_pedal = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Pedal de Sistema de Embrague (Clutch)")
-    low_brake_air_pressure_alarm = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Alarma Baja Presión de Aire en Frenos")
-    water_temperature = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Temperatura del Agua")
-    air_pressure = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Presión de Aire")
-    oil_pressure_fuel_other = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Presión de Aceite, Combustible, Otros")
-    voltage_indicator = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Indicador de Voltaje")
-    interior_cleaning = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Limpieza Interior")
+    safety_belt_and_seats_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Cinturón de Seguridad y Asientos")
+    safety_belt_and_seats_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Cinturón de Seguridad y Asientos")
+    safety_belt_and_seats_bt_comm = fields.Char('Comment')
+    safety_belt_and_seats_at_comm = fields.Char('Comment')
+
+    guide_and_management_system_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Guía y Sistema de Dirección")
+    guide_and_management_system_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Guía y Sistema de Dirección")
+    guide_and_management_system_bt_comm = fields.Char('Comment')
+    guide_and_management_system_at_comm = fields.Char('Comment')
+
+    rear_view_mirrors_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Espejos Retrovisores")
+    rear_view_mirrors_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Espejos Retrovisores")
+    rear_view_mirrors_bt_comm = fields.Char('Comment')
+    rear_view_mirrors_at_comm = fields.Char('Comment')
+
+    horn_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Bocina")
+    horn_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Bocina")
+    horn_bt_comm = fields.Char('Comment')
+    horn_at_comm = fields.Char('Comment')
+
+    marbete_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Marbete")
+    marbete_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Marbete")
+    marbete_bt_comm = fields.Char('Comment')
+    marbete_at_comm = fields.Char('Comment')
+
+    windshield_and_windshield_wipers_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Parabrisas y Limpia Parabrisas (Wipers)")
+    windshield_and_windshield_wipers_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Parabrisas y Limpia Parabrisas (Wipers)")
+    windshield_and_windshield_wipers_bt_comm = fields.Char('Comment')
+    windshield_and_windshield_wipers_at_comm = fields.Char('Comment')
+
+    clutch_system_pedal_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Pedal de Sistema de Embrague (Clutch)")
+    clutch_system_pedal_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Pedal de Sistema de Embrague (Clutch)")
+    clutch_system_pedal_bt_comm = fields.Char('Comment')
+    clutch_system_pedal_at_comm = fields.Char('Comment')
+
+    low_brake_air_pressure_alarm_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Alarma Baja Presión de Aire en Frenos")
+    low_brake_air_pressure_alarm_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Alarma Baja Presión de Aire en Frenos")
+    low_brake_air_pressure_alarm_bt_comm = fields.Char('Comment')
+    low_brake_air_pressure_alarm_at_comm = fields.Char('Comment')
+
+    water_temperature_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Temperatura del Agua")
+    water_temperature_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Temperatura del Agua")
+    water_temperature_bt_comm = fields.Char('Comment')
+    water_temperature_at_comm = fields.Char('Comment')
+
+    air_pressure_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Presión de Aire")
+    air_pressure_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Presión de Aire")
+    air_pressure_bt_comm = fields.Char('Comment')
+    air_pressure_at_comm = fields.Char('Comment')
+
+    oil_pressure_fuel_other_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Presión de Aceite, Combustible, Otros")
+    oil_pressure_fuel_other_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Presión de Aceite, Combustible, Otros")
+    oil_pressure_fuel_other_bt_comm = fields.Char('Comment')
+    oil_pressure_fuel_other_at_comm = fields.Char('Comment')
+
+    voltage_indicator_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Indicador de Voltaje")
+    voltage_indicator_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Indicador de Voltaje")
+    voltage_indicator_bt_comm = fields.Char('Comment')
+    voltage_indicator_at_comm = fields.Char('Comment')
+
+    interior_cleaning_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Limpieza Interior")
+    interior_cleaning_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Limpieza Interior")
+    interior_cleaning_bt_comm = fields.Char('Comment')
+    interior_cleaning_at_comm = fields.Char('Comment')
+
     #Lights
-    front_and_rear_lights = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Luces Delanteras y Traseras")
-    clapboard_lights = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Luces de Tablilla")
-    signals_front_and_rear = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Señales (Delanteras y Traseras)")
+    front_and_rear_lights_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Luces Delanteras y Traseras")
+    front_and_rear_lights_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Luces Delanteras y Traseras")
+    front_and_rear_lights_bt_comm = fields.Char('Comment')
+    front_and_rear_lights_at_comm = fields.Char('Comment')
+
+    clapboard_lights_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Luces de Tablilla")
+    clapboard_lights_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Luces de Tablilla")
+    clapboard_lights_bt_comm = fields.Char('Comment')
+    clapboard_lights_at_comm = fields.Char('Comment')
+
+    signals_front_and_rear_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Señales (Delanteras y Traseras)")
+    signals_front_and_rear_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Señales (Delanteras y Traseras)")
+    signals_front_and_rear_bt_comm = fields.Char('Comment')
+    signals_front_and_rear_at_comm = fields.Char('Comment')
+
     #Exterior and Mechanics
-    foot_and_handbrakes = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Frenos de Pie y de Mano")
-    rubber_bands_and_rings = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Gomas y Aros")
-    water_and_oil_lichens = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Liqueos de Agua y de Aceite")
-    strange_noises_in_the_engine = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Ruidos Extraños en el Motor")
-    forward_train = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Tren Delantero")
-    fuel_tank_and_tank_lid = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Tanque de Combustible y Tapa del Tanque")
-    air_pressure_in_the_wheels = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Presión de Aire en las Ruedas")
-    oil_and_filter = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Aceite y Filtro")
-    brake_hose = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Manguera de Frenos")
-    cargo_and_mooring_devices = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Carga y Dispositivos de Amarre")
-    fifth_wheel_or_pintle_hook = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Quinta Rueda / Pintle Hook")
-    exterior_cleaning = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Limpieza Exterior")
+
+    foot_and_handbrakes_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Frenos de Pie y de Mano")
+    foot_and_handbrakes_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Frenos de Pie y de Mano")
+    foot_and_handbrakes_bt_comm = fields.Char('Comment')
+    foot_and_handbrakes_at_comm = fields.Char('Comment')
+
+    rubber_bands_and_rings_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Gomas y Aros")
+    rubber_bands_and_rings_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Gomas y Aros")
+    rubber_bands_and_rings_bt_comm = fields.Char('Comment')
+    rubber_bands_and_rings_at_comm = fields.Char('Comment')
+
+    water_and_oil_lichens_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Liqueos de Agua y de Aceite")
+    water_and_oil_lichens_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Liqueos de Agua y de Aceite")
+    water_and_oil_lichens_bt_comm = fields.Char('Comment')
+    water_and_oil_lichens_at_comm = fields.Char('Comment')
+
+    strange_noises_in_the_engine_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Ruidos Extraños en el Motor")
+    strange_noises_in_the_engine_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Ruidos Extraños en el Motor")
+    strange_noises_in_the_engine_bt_comm = fields.Char('Comment')
+    strange_noises_in_the_engine_at_comm = fields.Char('Comment')
+
+    forward_train_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Tren Delantero")
+    forward_train_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Tren Delantero")
+    forward_train_bt_comm = fields.Char('Comment')
+    forward_train_at_comm = fields.Char('Comment')
+
+    fuel_tank_and_tank_lid_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Tanque de Combustible y Tapa del Tanque")
+    fuel_tank_and_tank_lid_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Tanque de Combustible y Tapa del Tanque")
+    fuel_tank_and_tank_lid_bt_comm = fields.Char('Comment')
+    fuel_tank_and_tank_lid_at_comm = fields.Char('Comment')
+
+    air_pressure_in_the_wheels_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Presión de Aire en las Ruedas")
+    air_pressure_in_the_wheels_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Presión de Aire en las Ruedas")
+    air_pressure_in_the_wheels_bt_comm = fields.Char('Comment')
+    air_pressure_in_the_wheels_at_comm = fields.Char('Comment')
+
+    oil_and_filter_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Aceite y Filtro")
+    oil_and_filter_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Aceite y Filtro")
+    oil_and_filter_bt_comm = fields.Char('Comment')
+    oil_and_filter_at_comm = fields.Char('Comment')
+
+    brake_hose_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Manguera de Frenos")
+    brake_hose_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Manguera de Frenos")
+    brake_hose_bt_comm = fields.Char('Comment')
+    brake_hose_at_comm = fields.Char('Comment')
+
+    cargo_and_mooring_devices_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Carga y Dispositivos de Amarre")
+    cargo_and_mooring_devices_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Carga y Dispositivos de Amarre")
+    cargo_and_mooring_devices_bt_comm = fields.Char('Comment')
+    cargo_and_mooring_devices_at_comm = fields.Char('Comment')
+
+    fifth_wheel_or_pintle_hook_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Quinta Rueda / Pintle Hook")
+    fifth_wheel_or_pintle_hook_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Quinta Rueda / Pintle Hook")
+    fifth_wheel_or_pintle_hook_bt_comm = fields.Char('Comment')
+    fifth_wheel_or_pintle_hook_at_comm = fields.Char('Comment')
+
+    exterior_cleaning_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Limpieza Exterior")
+    exterior_cleaning_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Limpieza Exterior")
+    exterior_cleaning_bt_comm = fields.Char('Comment')
+    exterior_cleaning_at_comm = fields.Char('Comment')
+
     #Others
-    others = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Otros")
+    others_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Otros")
+    others_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Otros")
+    others_bt_comm = fields.Char('Comment')
+    others_at_comm = fields.Char('Comment')
 
     # @api.model
     # def default_get(self, fields_list):
