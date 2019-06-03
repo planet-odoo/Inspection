@@ -109,8 +109,8 @@ class DailyInspection(models.Model):
     _name = 'daily.inspection'
 
     vehicle_id = fields.Many2one('fleet.vehicle', 'Vehicle', required=True)
-    daily_digital_signature = fields.Binary('Signature')
-    # daily_count = fields.Integer(compute="_compute_count_daily", string="Daily Count")
+    driver_signature = fields.Binary('Driver Signature')
+    inspector_signature = fields.Binary('Inspector Signature')
     driver = fields.Many2one('res.partner', "Chofer")
     unity = fields.Integer("Unidad")
     clapboard = fields.Char("Tablilla")
@@ -120,10 +120,22 @@ class DailyInspection(models.Model):
     am_mileage = fields.Float("Millaje AM")
     pm_mileage = fields.Float("Millaje PM")
     #Security Team
-    safety_equipment = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Equipo de Seguridad (PPE)")
-    fire_extinguisher = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Extintor de Incendios")
-    flag = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Bandera")
-    reflectors = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Reflectores")
+    safety_equipment_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Equipo de Seguridad (PPE)")
+    safety_equipment_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Equipo de Seguridad (PPE)")
+    safety_equipment_bt_comm = fields.Char('Comment')
+    safety_equipment_at_comm = fields.Char('Comment')
+    fire_extinguisher_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Extintor de Incendios")
+    fire_extinguisher_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Extintor de Incendios")
+    fire_extinguisher_bt_comm = fields.Char('Comment')
+    fire_extinguisher_at_comm = fields.Char('Comment')
+    flag_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Bandera")
+    flag_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Bandera")
+    flag_bt_comm = fields.Char('Comment')
+    flag_at_comm = fields.Char('Comment')
+    reflectors_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Reflectores")
+    reflectors_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Reflectores")
+    reflectors_bt_comm = fields.Char('Comment')
+    reflectors_at_comm = fields.Char('Comment')
     #Cabin
     safety_belt_and_seats = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Cinturón de Seguridad y Asientos")
     guide_and_management_system = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Guía y Sistema de Dirección")
@@ -157,3 +169,15 @@ class DailyInspection(models.Model):
     exterior_cleaning = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Limpieza Exterior")
     #Others
     others = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Otros")
+
+    # @api.model
+    # def default_get(self, fields_list):
+    #     if self._context:
+    #         res = super(DailyInspection, self).default_get(fields_list)
+    #         res.update({'vehicle_id': self._context.get('default_vehicle_id'),
+    #                     'clapboard': self._context.get('license_plate'),
+    #                     'brand': self._context.get('brand_id'),
+    #                     'model': self._context.get('model_id'),
+    #                     'year': self._context.get('year_model'),
+    #                     })
+    #         return res

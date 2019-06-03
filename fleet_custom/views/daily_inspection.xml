@@ -26,29 +26,84 @@
                 <sheet>
                     <group>
                         <group>
+                            <field name="vehicle_id"/>
                             <field name="driver"/>
                             <field name="unity"/>
                             <field name="clapboard"/>
                             <field name="date"/>
                         </group>
                         <group>
-                            <field name="am_time" widget="float_time"/>
-                            <field name="pm_time" widget="float_time"/>
+                            <div class="o_address_format" cols="6" colspan="2">
+                                <label for="am_time" string="Hora AM" style="padding-right:17%"/>
+                                <field name="am_time" widget="float_time" style="position: relative;width:10%!important;min-width: 10px;"/>&amp;nbsp;<span>AM</span>
+                            </div>
+                            <div class="o_address_format" cols="6" colspan="2">
+                                <label for="pm_time" string="Hora PM" style="padding-right:17%"/>
+                                <field name="pm_time" widget="float_time" style="position: relative;width:10%!important;min-width: 10px;"/>&amp;nbsp;<span>PM</span>
+                            </div>
+                            <!--                            <field name="am_time" widget="float_time" style="width:18%"/><span style="width:18%">AM</span>-->
+                            <!--                            <field name="pm_time" widget="float_time" style="width:18%"/><span style="width:18%">PM</span>-->
                             <field name="am_mileage" widget="float_time"/>
                             <field name="pm_mileage" widget="float_time"/>
                         </group>
                     </group>
-                    <label for="daily_digital_signature" string="Signature" class="oe_edit_only" />
-                    <h3>
-                        <field name="daily_digital_signature" widget="signature"/>
-                    </h3>
+                    <group>
+                        <table class="table table-bordered">
+                            <!--                        <table string="Antes del Viaje (Equipo Seguridad)">-->
+                            <tr class="active">
+                                <th>Componentes Inspeccionados</th>
+                                <th>Antes del Viaje</th>
+                                <th>Despues del Viaje</th>
+                            </tr>
+                            <separator string="Equipo Seguridad"/>
+                            <tr>
+                                <td>Equipo de Seguridad (PPE)</td>
+                                <td>
+                                    <td><field name="safety_equipment_bt" widget="radio" options="{'horizontal': true}"/></td>
+                                    <td style="width:65%"><field name="safety_equipment_bt_comm" placeholder="Comment.."/></td>
+                                </td>
+                                <td>
+                                    <td><field name="safety_equipment_at" widget="radio" options="{'horizontal': true}"/></td>
+                                    <td style="width:65%"><field name="safety_equipment_at_comm" placeholder="Comment.."/></td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Extintor de Incendios</td>
+                                <td>
+                                    <td><field name="fire_extinguisher_bt" widget="radio" options="{'horizontal': true}"/></td>
+                                    <td style="width:65%"><field name="fire_extinguisher_bt_comm" placeholder="Comment.."/></td>
+                                </td>
+                                <td>
+                                    <td><field name="fire_extinguisher_at" widget="radio" options="{'horizontal': true}"/></td>
+                                    <td style="width:65%"><field name="fire_extinguisher_at_comm" placeholder="Comment.."/></td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bandera</td>
+                                <td>
+                                    <td><field name="flag_bt" widget="radio" options="{'horizontal': true}"/></td>
+                                    <td style="width:65%"><field name="flag_bt_comm" placeholder="Comment.."/></td>
+                                </td>
+                                <td>
+                                    <td><field name="flag_at" widget="radio" options="{'horizontal': true}"/></td>
+                                    <td style="width:65%"><field name="flag_at_comm" placeholder="Comment.."/></td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Reflectores</td>
+                                <td>
+                                    <td><field name="reflectors_bt" widget="radio" options="{'horizontal': true}"/></td>
+                                    <td style="width:65%"><field name="reflectors_bt_comm" placeholder="Comment.."/></td>
+                                </td>
+                                <td>
+                                    <td><field name="reflectors_at" widget="radio" options="{'horizontal': true}"/></td>
+                                    <td style="width:65%"><field name="reflectors_at_comm" placeholder="Comment.."/></td>
+                                </td>
+                            </tr>
+                        </table>
+                    </group>
                     <group style="width:100%">
                         <group style="width:50%">
-                            <separator string="Equipo Seguridad"/>
-                            <field name="safety_equipment" />
-                            <field name="fire_extinguisher" />
-                            <field name="flag" />
-                            <field name="reflectors" />
                             <separator string="Cabina"/>
                             <field name="safety_belt_and_seats" />
                             <field name="guide_and_management_system" />
@@ -63,12 +118,12 @@
                             <field name="oil_pressure_fuel_other" />
                             <field name="voltage_indicator" />
                             <field name="interior_cleaning" />
-                        </group>
-                        <group style="width:50%">
                             <separator string="Luces"/>
                             <field name="front_and_rear_lights" />
                             <field name="clapboard_lights" />
                             <field name="signals_front_and_rear" />
+                        </group>
+                        <group style="width:50%">
                             <separator string="Exterior y Mecánica"/>
                             <field name="foot_and_handbrakes" />
                             <field name="rubber_bands_and_rings" />
@@ -86,6 +141,16 @@
                             <field name="others" />
                         </group>
                     </group>
+                    <div style="100%">
+                        <div style="width:50%" class="float-left">
+                            <separator string=" Driver Signature" />
+                            <field name="driver_signature" widget="signature" nolabel="1"/>
+                        </div>
+                        <div style="width:50%" class="float-left">
+                            <separator string="Inspector Signature"/>
+                            <field name="inspector_signature" widget="signature" nolabel="1"/>
+                        </div>
+                    </div>
                 </sheet>
             </form>
         </field>
