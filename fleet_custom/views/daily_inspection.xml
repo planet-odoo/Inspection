@@ -41,8 +41,6 @@
                                 <label for="pm_time" string="Hora PM" style="padding-right:17%"/>
                                 <field name="pm_time" widget="float_time" style="position: relative;width:10%!important;min-width: 10px;"/>&amp;nbsp;<span>PM</span>
                             </div>
-                            <!--                            <field name="am_time" widget="float_time" style="width:18%"/><span style="width:18%">AM</span>-->
-                            <!--                            <field name="pm_time" widget="float_time" style="width:18%"/><span style="width:18%">PM</span>-->
                             <field name="am_mileage" widget="float_time"/>
                             <field name="pm_mileage" widget="float_time"/>
                         </group>
@@ -140,6 +138,9 @@
                             <separator string="Otros"/>
                             <field name="others" />
                         </group>
+                    </group>
+                    <group>
+                        <field name="general_comment" />
                     </group>
                     <div style="100%">
                         <div style="width:50%" class="float-left">

@@ -3,6 +3,8 @@ from odoo import api,fields,models,_
 class Fleet_Vehicles(models.Model):
     _inherit = 'fleet.vehicle'
 
+    unit = fields.Char('Units')
+
     @api.multi
     def return_action_for_inspection(self):
         """ This opens the xml view specified in xml_id for the current vehicle """
@@ -17,6 +19,7 @@ class Fleet_Vehicles(models.Model):
                              model_id = self.model_id.id,
                              brand_id = self.model_id.brand_id.id,
                              year_model = self.model_year,
+                             unit = self.unit,
                              group_by=False),
                 domain=[('vehicle_id', '=', self.id)])
             return res
@@ -112,13 +115,14 @@ class DailyInspection(models.Model):
     driver_signature = fields.Binary('Driver Signature')
     inspector_signature = fields.Binary('Inspector Signature')
     driver = fields.Many2one('res.partner', "Chofer")
-    unity = fields.Integer("Unidad")
+    unity = fields.Char("Unidad")
     clapboard = fields.Char("Tablilla")
     date = fields.Date("Fecha")
     am_time = fields.Float("Hora AM")
     pm_time = fields.Float("Hora PM")
     am_mileage = fields.Float("Millaje AM")
     pm_mileage = fields.Float("Millaje PM")
+    general_comment = fields.Text('Comentarios Adicionales')
     #Security Team
     safety_equipment_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Equipo de Seguridad (PPE)")
     safety_equipment_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Equipo de Seguridad (PPE)")
@@ -170,14 +174,13 @@ class DailyInspection(models.Model):
     #Others
     others = fields.Selection([('ok','OK'),('repairer','Reparar'),('na','NA')],"Otros")
 
-    # @api.model
-    # def default_get(self, fields_list):
-    #     if self._context:
-    #         res = super(DailyInspection, self).default_get(fields_list)
-    #         res.update({'vehicle_id': self._context.get('default_vehicle_id'),
-    #                     'clapboard': self._context.get('license_plate'),
-    #                     'brand': self._context.get('brand_id'),
-    #                     'model': self._context.get('model_id'),
-    #                     'year': self._context.get('year_model'),
-    #                     })
-    #         return res
+
+    @api.model
+    def default_get(self, fields_list):
+        if self._context:
+            res = super(DailyInspection, self).default_get(fields_list)
+            res.update({'vehicle_id': self._context.get('default_vehicle_id'),
+                        'clapboard': self._context.get('license_plate'),
+                        'unity': self._context.get('unit'),
+                        })
+            return res

@@ -22,6 +22,9 @@
                         help="Annual Inspetion for this vehicle">
                 </button>
             </xpath>
+            <xpath expr="//field[@name='model_year']" position="after">
+                <field name="unit" type="xml"/>
+            </xpath>
         </field>
     </record>
 </odoo>
