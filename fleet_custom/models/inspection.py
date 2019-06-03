@@ -140,6 +140,7 @@ class DailyInspection(models.Model):
     reflectors_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Reflectores")
     reflectors_bt_comm = fields.Char('Comment')
     reflectors_at_comm = fields.Char('Comment')
+
     #Cabin
     safety_belt_and_seats_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Cinturón de Seguridad y Asientos")
     safety_belt_and_seats_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Cinturón de Seguridad y Asientos")
@@ -223,7 +224,6 @@ class DailyInspection(models.Model):
     signals_front_and_rear_at_comm = fields.Char('Comment')
 
     #Exterior and Mechanics
-
     foot_and_handbrakes_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Frenos de Pie y de Mano")
     foot_and_handbrakes_at = fields.Selection([('ok','OK'),('damaged','Dañado')],"Frenos de Pie y de Mano")
     foot_and_handbrakes_bt_comm = fields.Char('Comment')
