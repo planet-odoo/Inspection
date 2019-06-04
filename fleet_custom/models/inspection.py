@@ -122,8 +122,8 @@ class DailyInspection(models.Model):
     date = fields.Date("Fecha")
     am_time = fields.Float("Hora AM")
     pm_time = fields.Float("Hora PM")
-    am_mileage = fields.Float("Millaje AM")
-    pm_mileage = fields.Float("Millaje PM")
+    am_mileage = fields.Integer("Millaje AM")
+    pm_mileage = fields.Integer("Millaje PM")
     general_comment = fields.Text('Comentarios Adicionales')
     #Security Team
     safety_equipment_bt = fields.Selection([('ok','OK'),('damaged','Dañado')],"Equipo de Seguridad (PPE)")
