@@ -1,0 +1,22 @@
+<odoo>
+    <report
+            id="annual_inspection_report"
+            model="annual.inspection"
+            menu="True"
+            report_type="qweb-pdf"
+            string="Annual Inspection"
+            name="fleet_custom.report_annual"
+            file="fleet_custom.report_annual"
+            paperformat="fleet_custom.inspection_paper_format"
+    />
+
+    <report
+            id="daily_inspection_report"
+            model="daily.inspection"
+            menu="True"
+            report_type="qweb-pdf"
+            string="Daily Inspection"
+            name="website_helpdesk_support.helpdesk_ticket_id"
+            file="website_helpdesk_support.helpdesk_ticket_id"
+    />
+</odoo>

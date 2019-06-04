@@ -110,6 +110,8 @@ class AnnualInspection(models.Model):
 
 class DailyInspection(models.Model):
     _name = 'daily.inspection'
+    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin']
+
 
     vehicle_id = fields.Many2one('fleet.vehicle', 'Vehicle', required=True)
     driver_signature = fields.Binary('Driver Signature')
@@ -300,3 +302,13 @@ class DailyInspection(models.Model):
                         'unity': self._context.get('unit'),
                         })
             return res
+
+    @api.model
+    def create(self, vals_list):
+        res = super(DailyInspection,self).create(vals_list)
+        morning_odometer =self.env['fleet.vehicle.odometer'].create({'vehicle_id':res.vehicle_id.id,
+                                                                     'value':res.am_mileage})
+
+        afternoon_odometer = self.env['fleet.vehicle.odometer'].create({'vehicle_id':res.vehicle_id.id,
+                                                                     'value':res.pm_mileage})
+        return res

@@ -41,8 +41,8 @@
                                 <label for="pm_time" string="Hora PM" style="padding-right:17%"/>
                                 <field name="pm_time" widget="float_time" style="position: relative;width:10%!important;min-width: 10px;"/>&amp;nbsp;<span>PM</span>
                             </div>
-                            <field name="am_mileage" widget="float_time"/>
-                            <field name="pm_mileage" widget="float_time"/>
+                            <field name="am_mileage" />
+                            <field name="pm_mileage" />
                         </group>
                     </group>
                     <group>
@@ -376,7 +376,7 @@
                                     <td style="width:65%"><field name="brake_hose_at_comm" placeholder="Comment.."/></td>
                                 </td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td>Carga y Dispositivos de Amarre</td>
                                 <td>
                                     <td><field name="cargo_and_mooring_devices_bt" widget="radio" options="{'horizontal': true}"/></td>
@@ -438,6 +438,11 @@
                         </div>
                     </div>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>

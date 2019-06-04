@@ -1,0 +1,144 @@
+<odoo>
+    <template id="annual_header_layout">
+        <div class="header" style="width:100%">
+            <div style="float:left;width:40%">
+                <img class="signature mb8" src='/fleet_custom/static/src/img/inspection.png' style="width:60%"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="annual_footer_layout">
+        <div class="footer">
+            <strong>
+                This is a Footer
+            </strong>
+        </div>
+    </template>
+
+    <template id="report_annual_document">
+        <t t-call="fleet_custom.annual_header_layout"/>
+        <div class="page">
+            <div class="oe_structure"/>
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <span style="font-size:150%">
+                                <strong>Vehicle</strong> :- <span t-field="doc.vehicle_id.model_id.name"/><br/>
+                                <strong>Owner</strong> :- <span t-field="doc.owner.name"/><br/>
+                                <strong>Date</strong> :- <span t-field="doc.date"/><br/>
+                                <strong>Time</strong> :- <span t-field="doc.hour"/><span t-field="doc.am_pm"/><br/>
+                                <strong>Adresses</strong> :- <span t-raw="doc.address"/><br/>
+                                <strong>License</strong> :- <span t-field="doc.license"/><br/>
+                                <strong>Operator</strong> :- <span t-field="doc.operator.name"/>
+                            </span>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span style="font-size:150%">
+                                <strong>Inspector/Mechanic/Technician</strong> :- <span t-field="doc.name.name"/><br/>
+                                <strong>License Plate</strong> :- <span t-field="doc.clapboard"/><br/>
+                                <strong>VIN</strong> :- <span t-field="doc.vin"/><br/>
+                                <strong>Brand</strong> :- <span t-field="doc.brand.name"/><br/>
+                                <strong>Model</strong> :- <span t-field="doc.model.name"/><br/>
+                                <strong>Year</strong> :- <span t-field="doc.year"/><br/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <h2>Frenos</h2>
+                        <span style="font-size:120%">
+                            Ajuste :- <span t-field="doc.adjustment"/><br/>
+                            Tambor/Disco :- <span t-field="doc.drum_disc"/><br/>
+                            Mangas/Tubos :- <span t-field="doc.sleeves_tubes"/><br/>
+                            Bandas :- <span t-field="doc.bands"/><br/>
+                            Válvula Proteccón Tractor :- <span t-field="doc.tractor_prtn_valve"/><br/>
+                            Compresor :- <span t-field="doc.compressor"/><br/>
+                            Frenos de Servicio :- <span t-field="doc.service_brakes"/><br/>
+                            Frenos Estacionamiento :- <span t-field="doc.parking_brakes"/><br/>
+                            Frenos Eléctricos :- <span t-field="doc.electric_brakes"/><br/>
+                            Frenos Hidráulicos :- <span t-field="doc.hydraulic_brakes"/><br/>
+                            Luz Advertencia :- <span t-field="doc.warning_light"/><br/>
+                        </span>
+                        <h2>Parabrisas</h2>
+                        <span style="font-size:120%">
+                            Parabrisas :- <span t-field="doc.windshield"/><br/>
+                        </span>
+                        <h2>Carga segura</h2>
+                        <span style="font-size:120%">
+                            Cadena :- <span t-field="doc.chain"/><br/>
+                        </span>
+                    </td>
+                    <td>
+                        <h2>Guía</h2>
+                        <span style="font-size:120%">
+                            Juego :- <span t-field="doc.game"/><br/>
+                            Columna del Guía :- <span t-field="doc.guide_column"/><br/>
+                            Tren Delantero :- <span t-field="doc.forward_train"/><br/>
+                            Caja del Guía :- <span t-field="doc.guide_box"/><br/>
+                            Pitman :- <span t-field="doc.pitman"/><br/>
+                            Muñequillas/Bolt Joints :- <span t-field="doc.dollies"/><br/>
+                            Terminales/Drag Links :- <span t-field="doc.terminals"/><br/>
+                            Tuercas :- <span t-field="doc.nuts"/><br/>
+                            Líquido "Power Steering" :- <span t-field="doc.liquid"/><br/>
+                        </span>
+                        <h2>Combustible</h2>
+                        <span style="font-size:120%">
+                            Filtaciones :- <span t-field="doc.leaks"/><br/>
+                            Tapa el Tanque :- <span t-field="doc.cover_the_tank"/><br/>
+                            Montura del Tanque :- <span t-field="doc.tank_mount"/><br/>
+                        </span>
+                        <h2>Limpiaparabrisas</h2>
+                        <span style="font-size:120%">
+                            Limpiaparabrisas :- <span t-field="doc.windshield_wipers"/><br/>
+                        </span>
+                    </td>
+                    <td>
+                        <h2>Luces</h2>
+                        <span style="font-size:120%">
+                            Direccionales delanteras :- <span t-field="doc.front_directional"/><br/>
+                            ID/Despejo Delanteras :- <span t-field="doc.id_clear_front"/><br/>
+                            Luz Marcadora Derecha :- <span t-field="doc.right_marker_light"/><br/>
+                            Luz Marcadora Izquierda	:- <span t-field="doc.left_marker_light"/><br/>
+                            Direccionales Traseras :- <span t-field="doc.rear_directionals"/><br/>
+                            Luz de Pare "STOP“ :- <span t-field="doc.stop_light"/><br/>
+                            ID/Despejo Traseras	:- <span t-field="doc.id_clear_backs"/><br/>
+                            Reflectores	:- <span t-field="doc.reflectors"/><br/>
+                        </span>
+                        <h2>Acoplador</h2>
+                        <span style="font-size:120%">
+                            Quinta Rueda :- <span t-field="doc.fifth_wheel"/><br/>
+                            Pintle Hook	:- <span t-field="doc.pintle_hook"/><br/>
+                            Draw Bar Eye/Tongue	:- <span t-field="doc.draw_bar_eye_tounge"/><br/>
+                            Cadenas/Cables :- <span t-field="doc.chains_cable"/><br/>
+                        </span>
+                        <h2>Tubo Escape/muffler </h2>
+                        <span style="font-size:120%">
+                            Escapes	:- <span t-field="doc.escapes"/><br/>
+                            Instalación adecuada :- <span t-field="doc.proper_installation"/><br/>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <h3>
+                <span><img t-att-src="'data:image/png;base64,%s' % doc.annual_digital_signature"/></span>
+            </h3>
+        </div>
+        <t t-call="fleet_custom.annual_footer_layout"/>
+    </template>
+
+
+
+    <template id="report_annual">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc" >
+                <t t-call="fleet_custom.report_annual_document" t-lang="doc.create_uid.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>
