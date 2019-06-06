@@ -1,5 +1,11 @@
 from odoo import api,fields,models,_
 
+class Fleet_Odometer(models.Model):
+    _inherit = 'fleet.vehicle.odometer'
+
+    daily_inspect_id = fields.Many2one('daily.inspection','Daily Inspection')
+    odometer = fields.Selection([('morning','Morning'),('afternoon','Afternoon')])
+
 class Fleet_Vehicles(models.Model):
     _inherit = 'fleet.vehicle'
 
@@ -303,12 +309,24 @@ class DailyInspection(models.Model):
                         })
             return res
 
+    @api.onchange('pm_mileage')
+    def onchange_mileage(self):
+        if self.pm_mileage and self.pm_mileage > 0:
+            odometers = self.env['fleet.vehicle.odometer'].search([('daily_inspect_id','=',self._origin.id)])
+            for each_odometer in odometers:
+                if each_odometer.odometer=='afternoon':
+                    each_odometer.write({'value':self.pm_mileage})
+
     @api.model
     def create(self, vals_list):
         res = super(DailyInspection,self).create(vals_list)
         morning_odometer =self.env['fleet.vehicle.odometer'].create({'vehicle_id':res.vehicle_id.id,
-                                                                     'value':res.am_mileage})
+                                                                     'value':res.am_mileage,
+                                                                     'daily_inspect_id':res.id,
+                                                                     'odometer':'morning',})
 
         afternoon_odometer = self.env['fleet.vehicle.odometer'].create({'vehicle_id':res.vehicle_id.id,
-                                                                     'value':res.pm_mileage})
+                                                                        'value':res.pm_mileage,
+                                                                        'daily_inspect_id':res.id,
+                                                                        'odometer':'afternoon'})
         return res

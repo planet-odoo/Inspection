@@ -16,7 +16,9 @@
             menu="True"
             report_type="qweb-pdf"
             string="Daily Inspection"
-            name="website_helpdesk_support.helpdesk_ticket_id"
-            file="website_helpdesk_support.helpdesk_ticket_id"
+            name="fleet_custom.report_daily"
+            file="fleet_custom.report_daily"
+            paperformat="fleet_custom.inspection_paper_format"
+
     />
 </odoo>
