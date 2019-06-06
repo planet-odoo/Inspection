@@ -124,9 +124,10 @@
                         </span>
                     </td>
                 </tr>
-            </table>
+            </table><br/><br/>
             <h3>
-                <span><img t-att-src="'data:image/png;base64,%s' % doc.annual_digital_signature"/></span>
+                <strong>Inspector Signature</strong><br/>
+                <span><img t-attf-src="data:image/png;base64,#{doc.annual_digital_signature}"/></span>
             </h3>
         </div>
         <t t-call="fleet_custom.inspection_footer_layout"/>
@@ -166,378 +167,196 @@
                         </span>
                     </td>
                 </tr>
-            </table>
-            <table class="table table-bordered" style="font-family:arial;font-size:14px;border-collapse:collapse;">
+            </table><br/>
+            <table class="table table-bordered" style="font-size:150%">
                 <tr>
-                    <th>Componentes Inspeccionados</th>
-                    <th>Antes del Viaje</th>
-                    <th>Despues del Viaje</th>
+                    <td><strong>Componentes Inspeccionados</strong></td>
+                    <td><strong>Antes del Viaje</strong></td>
+                    <td><strong>Despues del Viaje</strong></td>
                 </tr>
                 <!--                <h2 string="Equipo Seguridad"/>-->
                 <tr>
                     <td>Equipo de Seguridad (PPE)</td>
-                    <td>
-                        <span t-field="doc.safety_equipment_bt" /> <span t-field="doc.safety_equipment_bt_comm" />
-                    </td>
-                    <td>
-                        <span t-field="doc.safety_equipment_at"/> <span t-field="doc.safety_equipment_at_comm" />
-                    </td>
+                    <td><span t-field="doc.safety_equipment_bt" /> <span t-field="doc.safety_equipment_bt_comm" /></td>
+                    <td><span t-field="doc.safety_equipment_at"/> <span t-field="doc.safety_equipment_at_comm" /></td>
+                </tr>
+                <tr>
+                    <td>Extintor de Incendios</td>
+                    <td><span t-field="doc.fire_extinguisher_bt"  /> <span t-field="doc.fire_extinguisher_bt_comm" /></td>
+                    <td><span t-field="doc.fire_extinguisher_at"  /><span t-field="doc.fire_extinguisher_at_comm" /></td>
+                </tr>
+                <tr>
+                    <td>Bandera</td>
+                    <td><span t-field="doc.flag_bt"  /> <span t-field="doc.flag_bt_comm" /></td>
+                    <td><span t-field="doc.flag_at"  /> <span t-field="doc.flag_at_comm" /></td>
                 </tr>
                 <tr >
-                    <td >Extintor de Incendios</td>
-                    <td >
-                        <td ><span t-field="doc.fire_extinguisher_bt"  /></td>
-                        <td ><span t-field="doc.fire_extinguisher_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.fire_extinguisher_at"  /></td>
-                        <td ><span t-field="doc.fire_extinguisher_at_comm" /></td>
-                    </td>
-                </tr>
-                <tr >
-                    <td >Bandera</td>
-                    <td >
-                        <td ><span t-field="doc.flag_bt"  /></td>
-                        <td ><span t-field="doc.flag_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.flag_at"  /></td>
-                        <td ><span t-field="doc.flag_at_comm" /></td>
-                    </td>
-                </tr>
-                <tr >
-                    <td >Reflectores</td>
-                    <td >
-                        <td ><span t-field="doc.reflectors_bt"  /></td>
-                        <td ><span t-field="doc.reflectors_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.reflectors_at"  /></td>
-                        <td ><span t-field="doc.reflectors_at_comm" /></td>
-                    </td>
+                    <td>Reflectores</td>
+                    <td ><span t-field="doc.reflectors_bt"  /> <span t-field="doc.reflectors_bt_comm" /></td>
+                    <td ><span t-field="doc.reflectors_at"  /> <span t-field="doc.reflectors_at_comm" /></td>
                 </tr>
                 <!--                <h2 string="Cabina"/>-->
                 <tr >
                     <td >Cinturón de Seguridad y Asientos</td>
-                    <td >
-                        <td ><span t-field="doc.safety_belt_and_seats_bt"  /></td>
-                        <td ><span t-field="doc.safety_belt_and_seats_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.safety_belt_and_seats_at"  /></td>
-                        <td ><span t-field="doc.safety_belt_and_seats_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.safety_belt_and_seats_bt"  /> <span t-field="doc.safety_belt_and_seats_bt_comm" /></td>
+                    <td ><span t-field="doc.safety_belt_and_seats_at"  /> <span t-field="doc.safety_belt_and_seats_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Guía y Sistema de Dirección</td>
-                    <td >
-                        <td ><span t-field="doc.guide_and_management_system_bt"  /></td>
-                        <td ><span t-field="doc.guide_and_management_system_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.guide_and_management_system_at"  /></td>
-                        <td ><span t-field="doc.guide_and_management_system_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.guide_and_management_system_bt"  /> <span t-field="doc.guide_and_management_system_bt_comm" /></td>
+                    <td ><span t-field="doc.guide_and_management_system_at"  /> <span t-field="doc.guide_and_management_system_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Espejos Retrovisores</td>
-                    <td >
-                        <td ><span t-field="doc.rear_view_mirrors_bt"  /></td>
-                        <td ><span t-field="doc.rear_view_mirrors_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.rear_view_mirrors_at"  /></td>
-                        <td ><span t-field="doc.rear_view_mirrors_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.rear_view_mirrors_bt"  /> <span t-field="doc.rear_view_mirrors_bt_comm" /></td>
+                    <td ><span t-field="doc.rear_view_mirrors_at"  /> <span t-field="doc.rear_view_mirrors_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Bocina</td>
-                    <td >
-                        <td ><span t-field="doc.horn_bt"  /></td>
-                        <td ><span t-field="doc.horn_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.horn_at"  /></td>
-                        <td ><span t-field="doc.horn_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.horn_bt"  /> <span t-field="doc.horn_bt_comm" /></td>
+                    <td ><span t-field="doc.horn_at"  /> <span t-field="doc.horn_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Marbete</td>
-                    <td >
-                        <td ><span t-field="doc.marbete_bt"  /></td>
-                        <td ><span t-field="doc.marbete_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.marbete_at"  /></td>
-                        <td ><span t-field="doc.marbete_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.marbete_bt"  /> <span t-field="doc.marbete_bt_comm" /></td>
+                    <td ><span t-field="doc.marbete_at"  /> <span t-field="doc.marbete_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Parabrisas y Limpia Parabrisas (Wipers)</td>
-                    <td >
-                        <td ><span t-field="doc.windshield_and_windshield_wipers_bt"  /></td>
-                        <td ><span t-field="doc.windshield_and_windshield_wipers_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.windshield_and_windshield_wipers_at"  /></td>
-                        <td ><span t-field="doc.windshield_and_windshield_wipers_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.windshield_and_windshield_wipers_bt"  /> <span t-field="doc.windshield_and_windshield_wipers_bt_comm" /></td>
+                    <td ><span t-field="doc.windshield_and_windshield_wipers_at"  /> <span t-field="doc.windshield_and_windshield_wipers_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Pedal de Sistema de Embrague (Clutch)</td>
-                    <td >
-                        <td ><span t-field="doc.clutch_system_pedal_bt"  /></td>
-                        <td ><span t-field="doc.clutch_system_pedal_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.clutch_system_pedal_at"  /></td>
-                        <td ><span t-field="doc.clutch_system_pedal_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.clutch_system_pedal_bt"  /> <span t-field="doc.clutch_system_pedal_bt_comm" /></td>
+                    <td ><span t-field="doc.clutch_system_pedal_at"  /> <span t-field="doc.clutch_system_pedal_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Alarma Baja Presión de Aire en Frenos</td>
-                    <td >
-                        <td ><span t-field="doc.low_brake_air_pressure_alarm_bt"  /></td>
-                        <td ><span t-field="doc.low_brake_air_pressure_alarm_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.low_brake_air_pressure_alarm_at"  /></td>
-                        <td ><span t-field="doc.low_brake_air_pressure_alarm_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.low_brake_air_pressure_alarm_bt"  /> <span t-field="doc.low_brake_air_pressure_alarm_bt_comm" /></td>
+                    <td ><span t-field="doc.low_brake_air_pressure_alarm_at"  /> <span t-field="doc.low_brake_air_pressure_alarm_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Temperatura del Agua</td>
-                    <td >
-                        <td ><span t-field="doc.water_temperature_bt"  /></td>
-                        <td ><span t-field="doc.water_temperature_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.water_temperature_at"  /></td>
-                        <td ><span t-field="doc.water_temperature_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.water_temperature_bt"  /> <span t-field="doc.water_temperature_bt_comm" /></td>
+                    <td ><span t-field="doc.water_temperature_at"  /> <span t-field="doc.water_temperature_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Presión de Aire</td>
-                    <td >
-                        <td ><span t-field="doc.air_pressure_bt"  /></td>
-                        <td ><span t-field="doc.air_pressure_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.air_pressure_at"  /></td>
-                        <td ><span t-field="doc.air_pressure_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.air_pressure_bt"  /> <span t-field="doc.air_pressure_bt_comm" /></td>
+                    <td ><span t-field="doc.air_pressure_at"  /> <span t-field="doc.air_pressure_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Presión de Aceite, Combustible, Otros</td>
-                    <td >
-                        <td ><span t-field="doc.oil_pressure_fuel_other_bt"  /></td>
-                        <td ><span t-field="doc.oil_pressure_fuel_other_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.oil_pressure_fuel_other_at"  /></td>
-                        <td ><span t-field="doc.oil_pressure_fuel_other_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.oil_pressure_fuel_other_bt"  /> <span t-field="doc.oil_pressure_fuel_other_bt_comm" /></td>
+                    <td ><span t-field="doc.oil_pressure_fuel_other_at"  /> <span t-field="doc.oil_pressure_fuel_other_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Indicador de Voltaje</td>
-                    <td >
-                        <td ><span t-field="doc.voltage_indicator_bt"  /></td>
-                        <td ><span t-field="doc.voltage_indicator_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.voltage_indicator_at"  /></td>
-                        <td ><span t-field="doc.voltage_indicator_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.voltage_indicator_bt"  /> <span t-field="doc.voltage_indicator_bt_comm" /></td>
+                    <td ><span t-field="doc.voltage_indicator_at"  /> <span t-field="doc.voltage_indicator_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Limpieza Interior</td>
-                    <td >
-                        <td ><span t-field="doc.interior_cleaning_bt"  /></td>
-                        <td ><span t-field="doc.interior_cleaning_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.interior_cleaning_at"  /></td>
-                        <td ><span t-field="doc.interior_cleaning_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.interior_cleaning_bt"  /> <span t-field="doc.interior_cleaning_bt_comm" /></td>
+                    <td ><span t-field="doc.interior_cleaning_at"  /> <span t-field="doc.interior_cleaning_at_comm" /></td>
                 </tr>
                 <!--                <h2 string="Luces"/>-->
                 <tr >
                     <td >Luces Delanteras y Traseras</td>
-                    <td >
-                        <td ><span t-field="doc.front_and_rear_lights_bt"  /></td>
-                        <td ><span t-field="doc.front_and_rear_lights_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.front_and_rear_lights_at"  /></td>
-                        <td ><span t-field="doc.front_and_rear_lights_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.front_and_rear_lights_bt"  /> <span t-field="doc.front_and_rear_lights_bt_comm" /></td>
+                    <td ><span t-field="doc.front_and_rear_lights_at"  /> <span t-field="doc.front_and_rear_lights_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Luces de Tablilla</td>
-                    <td >
-                        <td ><span t-field="doc.clapboard_lights_bt"  /></td>
-                        <td ><span t-field="doc.clapboard_lights_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.clapboard_lights_at"  /></td>
-                        <td ><span t-field="doc.clapboard_lights_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.clapboard_lights_bt"  /> <span t-field="doc.clapboard_lights_bt_comm" /></td>
+                    <td ><span t-field="doc.clapboard_lights_at"  /> <span t-field="doc.clapboard_lights_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Señales (Delanteras y Traseras)</td>
-                    <td >
-                        <td ><span t-field="doc.signals_front_and_rear_bt"  /></td>
-                        <td ><span t-field="doc.signals_front_and_rear_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.signals_front_and_rear_at"  /></td>
-                        <td ><span t-field="doc.signals_front_and_rear_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.signals_front_and_rear_bt"  /> <span t-field="doc.signals_front_and_rear_bt_comm" /></td>
+                    <td ><span t-field="doc.signals_front_and_rear_at"  /> <span t-field="doc.signals_front_and_rear_at_comm" /></td>
                 </tr>
                 <!--                <h2 string="Exterior y Mecánica"/>-->
                 <tr >
                     <td >Frenos de Pie y de Mano</td>
-                    <td >
-                        <td ><span t-field="doc.foot_and_handbrakes_bt"  /></td>
-                        <td ><span t-field="doc.foot_and_handbrakes_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.foot_and_handbrakes_at"  /></td>
-                        <td ><span t-field="doc.foot_and_handbrakes_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.foot_and_handbrakes_bt"  /> <span t-field="doc.foot_and_handbrakes_bt_comm" /></td>
+                    <td ><span t-field="doc.foot_and_handbrakes_at"  /> <span t-field="doc.foot_and_handbrakes_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Gomas y Aros</td>
-                    <td >
-                        <td ><span t-field="doc.rubber_bands_and_rings_bt"  /></td>
-                        <td ><span t-field="doc.rubber_bands_and_rings_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.rubber_bands_and_rings_at"  /></td>
-                        <td ><span t-field="doc.rubber_bands_and_rings_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.rubber_bands_and_rings_bt"  /> <span t-field="doc.rubber_bands_and_rings_bt_comm" /></td>
+                    <td ><span t-field="doc.rubber_bands_and_rings_at"  /> <span t-field="doc.rubber_bands_and_rings_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Liqueos de Agua y de Aceite</td>
-                    <td >
-                        <td ><span t-field="doc.water_and_oil_lichens_bt"  /></td>
-                        <td ><span t-field="doc.water_and_oil_lichens_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.water_and_oil_lichens_at"  /></td>
-                        <td ><span t-field="doc.water_and_oil_lichens_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.water_and_oil_lichens_bt"  /> <span t-field="doc.water_and_oil_lichens_bt_comm" /></td>
+                    <td ><span t-field="doc.water_and_oil_lichens_at"  /> <span t-field="doc.water_and_oil_lichens_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Ruidos Extraños en el Motor</td>
-                    <td >
-                        <td ><span t-field="doc.strange_noises_in_the_engine_bt"  /></td>
-                        <td ><span t-field="doc.strange_noises_in_the_engine_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.strange_noises_in_the_engine_at"  /></td>
-                        <td ><span t-field="doc.strange_noises_in_the_engine_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.strange_noises_in_the_engine_bt"  /> <span t-field="doc.strange_noises_in_the_engine_bt_comm" /></td>
+                    <td ><span t-field="doc.strange_noises_in_the_engine_at"  /> <span t-field="doc.strange_noises_in_the_engine_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Tren Delantero</td>
-                    <td >
-                        <td ><span t-field="doc.forward_train_bt"  /></td>
-                        <td ><span t-field="doc.forward_train_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.forward_train_at"  /></td>
-                        <td ><span t-field="doc.forward_train_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.forward_train_bt"  /> <span t-field="doc.forward_train_bt_comm" /></td>
+                    <td ><span t-field="doc.forward_train_at"  /> <span t-field="doc.forward_train_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Tanque de Combustible y Tapa del Tanque</td>
-                    <td >
-                        <td ><span t-field="doc.fuel_tank_and_tank_lid_bt"  /></td>
-                        <td ><span t-field="doc.fuel_tank_and_tank_lid_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.fuel_tank_and_tank_lid_at"  /></td>
-                        <td ><span t-field="doc.fuel_tank_and_tank_lid_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.fuel_tank_and_tank_lid_bt"  /> <span t-field="doc.fuel_tank_and_tank_lid_bt_comm" /></td>
+                    <td ><span t-field="doc.fuel_tank_and_tank_lid_at"  /> <span t-field="doc.fuel_tank_and_tank_lid_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Presión de Aire en las Ruedas</td>
-                    <td >
-                        <td ><span t-field="doc.air_pressure_in_the_wheels_bt"  /></td>
-                        <td ><span t-field="doc.air_pressure_in_the_wheels_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.air_pressure_in_the_wheels_at"  /></td>
-                        <td ><span t-field="doc.air_pressure_in_the_wheels_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.air_pressure_in_the_wheels_bt"  /> <span t-field="doc.air_pressure_in_the_wheels_bt_comm" /></td>
+                    <td ><span t-field="doc.air_pressure_in_the_wheels_at"  /> <span t-field="doc.air_pressure_in_the_wheels_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Aceite y Filtro</td>
-                    <td >
-                        <td ><span t-field="doc.oil_and_filter_bt"  /></td>
-                        <td ><span t-field="doc.oil_and_filter_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.oil_and_filter_at"  /></td>
-                        <td ><span t-field="doc.oil_and_filter_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.oil_and_filter_bt"  /> <span t-field="doc.oil_and_filter_bt_comm" /></td>
+                    <td ><span t-field="doc.oil_and_filter_at"  /> <span t-field="doc.oil_and_filter_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Manguera de Frenos</td>
-                    <td >
-                        <td ><span t-field="doc.brake_hose_bt"  /></td>
-                        <td ><span t-field="doc.brake_hose_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.brake_hose_at"  /></td>
-                        <td ><span t-field="doc.brake_hose_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.brake_hose_bt"  /> <span t-field="doc.brake_hose_bt_comm" /></td>
+                    <td ><span t-field="doc.brake_hose_at"  /> <span t-field="doc.brake_hose_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Carga y Dispositivos de Amarre</td>
-                    <td >
-                        <td ><span t-field="doc.cargo_and_mooring_devices_bt"  /></td>
-                        <td ><span t-field="doc.cargo_and_mooring_devices_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.cargo_and_mooring_devices_at"  /></td>
-                        <td ><span t-field="doc.cargo_and_mooring_devices_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.cargo_and_mooring_devices_bt"  /> <span t-field="doc.cargo_and_mooring_devices_bt_comm" /></td>
+                    <td ><span t-field="doc.cargo_and_mooring_devices_at"  /> <span t-field="doc.cargo_and_mooring_devices_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Quinta Rueda / Pintle Hook</td>
-                    <td >
-                        <td ><span t-field="doc.fifth_wheel_or_pintle_hook_bt"  /></td>
-                        <td ><span t-field="doc.fifth_wheel_or_pintle_hook_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.fifth_wheel_or_pintle_hook_at"  /></td>
-                        <td ><span t-field="doc.fifth_wheel_or_pintle_hook_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.fifth_wheel_or_pintle_hook_bt"  /> <span t-field="doc.fifth_wheel_or_pintle_hook_bt_comm" /></td>
+                    <td ><span t-field="doc.fifth_wheel_or_pintle_hook_at"  /> <span t-field="doc.fifth_wheel_or_pintle_hook_at_comm" /></td>
                 </tr>
                 <tr >
                     <td >Limpieza Exterior</td>
-                    <td >
-                        <td ><span t-field="doc.exterior_cleaning_bt"  /></td>
-                        <td ><span t-field="doc.exterior_cleaning_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.exterior_cleaning_at"  /></td>
-                        <td ><span t-field="doc.exterior_cleaning_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.exterior_cleaning_bt"  /> <span t-field="doc.exterior_cleaning_bt_comm" /></td>
+                    <td ><span t-field="doc.exterior_cleaning_at"  /> <span t-field="doc.exterior_cleaning_at_comm" /></td>
                 </tr>
                 <!--                <h2 string="Otros"/>-->
-                <tr >
+                <tr>
                     <td >Otros</td>
-                    <td >
-                        <td ><span t-field="doc.others_bt"  /></td>
-                        <td ><span t-field="doc.others_bt_comm" /></td>
-                    </td>
-                    <td >
-                        <td ><span t-field="doc.others_at"  /></td>
-                        <td ><span t-field="doc.others_at_comm" /></td>
-                    </td>
+                    <td ><span t-field="doc.others_bt"  /> <span t-field="doc.others_bt_comm" /></td>
+                    <td ><span t-field="doc.others_at"  /> <span t-field="doc.others_at_comm" /></td>
+                </tr>
+            </table><br/><br/>
+            <div style="font-size:140%">
+                <strong>Comentarios Adicionales</strong><br/>
+                <span t-raw="doc.general_comment"/>
+            </div><br/><br/>
+            <table>
+                <tr style="font-size:150%">
+                    <th>Driver Signature</th>
+                    <th>Inspector Signature</th>
+                </tr>
+                <tr>
+                    <td><img t-attf-src="data:image/png;base64,#{doc.driver_signature}"/></td>
+                    <td><img t-attf-src="data:image/png;base64,#{doc.inspector_signature}"/></td>
                 </tr>
             </table>
         </div>
