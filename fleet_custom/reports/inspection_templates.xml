@@ -1,7 +1,7 @@
 <odoo>
     <template id="inspection_header_layout">
-        <div class="header" style="width:100%">
-            <div style="float:left;width:40%">
+        <div class="header">
+            <div style="float:left">
                 <img class="signature mb8" src='/fleet_custom/static/src/img/inspection.png' style="width:60%"/>
             </div>
         </div>
@@ -9,9 +9,6 @@
 
     <template id="inspection_footer_layout">
         <div class="footer">
-            <strong>
-                This is a Footer
-            </strong>
         </div>
     </template>
 
@@ -146,11 +143,10 @@
     <template id="report_daily_document">
         <t t-call="fleet_custom.inspection_header_layout"/>
         <div class="page">
-            <div class="oe_structure"/>
             <table>
                 <tr style="width:100%">
                     <td style="width:60%">
-                        <span style="font-size:150%">
+                        <span style="font-size:120%">
                             <strong>Vehicle</strong> : <span t-field="doc.vehicle_id.model_id.brand_id.name"/>/<span t-raw="doc.vehicle_id.model_id.name"/>/<span t-raw="doc.vehicle_id.license_plate"/><br/>
                             <strong>Chofer</strong> : <span t-field="doc.driver.name"/><br/>
                             <strong>Unidad</strong> : <span t-field="doc.unity"/><br/>
@@ -159,7 +155,7 @@
                         </span>
                     </td>
                     <td style="width:30%">
-                        <span style="font-size:150%">
+                        <span style="font-size:110%">
                             <strong>Hora AM</strong> : <span t-raw="doc.am_time"/><br/>
                             <strong>Hora PM</strong> : <span t-raw="doc.pm_time"/><br/>
                             <strong>Millaje AM</strong> : <span t-field="doc.am_mileage"/><br/>
@@ -168,13 +164,13 @@
                     </td>
                 </tr>
             </table><br/>
-            <table class="table table-bordered" style="font-size:150%">
+            <table class="table table-bordered">
                 <tr>
                     <td><strong>Componentes Inspeccionados</strong></td>
                     <td><strong>Antes del Viaje</strong></td>
                     <td><strong>Despues del Viaje</strong></td>
                 </tr>
-                <!--                <h2 string="Equipo Seguridad"/>-->
+                <tr><td><strong>Equipo Seguridad</strong></td></tr>
                 <tr>
                     <td>Equipo de Seguridad (PPE)</td>
                     <td><span t-field="doc.safety_equipment_bt" /> <span t-field="doc.safety_equipment_bt_comm" /></td>
@@ -195,7 +191,7 @@
                     <td ><span t-field="doc.reflectors_bt"  /> <span t-field="doc.reflectors_bt_comm" /></td>
                     <td ><span t-field="doc.reflectors_at"  /> <span t-field="doc.reflectors_at_comm" /></td>
                 </tr>
-                <!--                <h2 string="Cabina"/>-->
+                <tr><td><strong>Cabina</strong></td></tr>
                 <tr >
                     <td >Cinturón de Seguridad y Asientos</td>
                     <td ><span t-field="doc.safety_belt_and_seats_bt"  /> <span t-field="doc.safety_belt_and_seats_bt_comm" /></td>
@@ -261,7 +257,7 @@
                     <td ><span t-field="doc.interior_cleaning_bt"  /> <span t-field="doc.interior_cleaning_bt_comm" /></td>
                     <td ><span t-field="doc.interior_cleaning_at"  /> <span t-field="doc.interior_cleaning_at_comm" /></td>
                 </tr>
-                <!--                <h2 string="Luces"/>-->
+                <tr><td><strong>Luces</strong></td></tr>
                 <tr >
                     <td >Luces Delanteras y Traseras</td>
                     <td ><span t-field="doc.front_and_rear_lights_bt"  /> <span t-field="doc.front_and_rear_lights_bt_comm" /></td>
@@ -277,7 +273,7 @@
                     <td ><span t-field="doc.signals_front_and_rear_bt"  /> <span t-field="doc.signals_front_and_rear_bt_comm" /></td>
                     <td ><span t-field="doc.signals_front_and_rear_at"  /> <span t-field="doc.signals_front_and_rear_at_comm" /></td>
                 </tr>
-                <!--                <h2 string="Exterior y Mecánica"/>-->
+                <tr><td><strong>Exterior y Mecánica</strong></td></tr>
                 <tr >
                     <td >Frenos de Pie y de Mano</td>
                     <td ><span t-field="doc.foot_and_handbrakes_bt"  /> <span t-field="doc.foot_and_handbrakes_bt_comm" /></td>
@@ -338,19 +334,19 @@
                     <td ><span t-field="doc.exterior_cleaning_bt"  /> <span t-field="doc.exterior_cleaning_bt_comm" /></td>
                     <td ><span t-field="doc.exterior_cleaning_at"  /> <span t-field="doc.exterior_cleaning_at_comm" /></td>
                 </tr>
-                <!--                <h2 string="Otros"/>-->
+                <tr><td><strong>Otros</strong></td></tr>
                 <tr>
                     <td >Otros</td>
                     <td ><span t-field="doc.others_bt"  /> <span t-field="doc.others_bt_comm" /></td>
                     <td ><span t-field="doc.others_at"  /> <span t-field="doc.others_at_comm" /></td>
                 </tr>
-            </table><br/><br/>
-            <div style="font-size:140%">
+            </table><br/>
+            <div style="font-size:100%">
                 <strong>Comentarios Adicionales</strong><br/>
                 <span t-raw="doc.general_comment"/>
             </div><br/><br/>
             <table>
-                <tr style="font-size:150%">
+                <tr style="font-size:110%">
                     <th>Driver Signature</th>
                     <th>Inspector Signature</th>
                 </tr>
