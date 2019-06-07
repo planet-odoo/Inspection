@@ -341,7 +341,7 @@
                     <td ><span t-field="doc.others_at"  /> <span t-field="doc.others_at_comm" /></td>
                 </tr>
             </table><br/>
-            <div style="font-size:90%">
+            <div style="font-size:100%">
                 <strong>Comentarios Adicionales</strong><br/>
                 <span t-raw="doc.general_comment"/>
             </div>
