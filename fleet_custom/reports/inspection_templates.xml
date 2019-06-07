@@ -146,7 +146,7 @@
             <table>
                 <tr style="width:100%">
                     <td style="width:60%">
-                        <span style="font-size:120%">
+                        <span style="font-size:110%">
                             <strong>Vehicle</strong> : <span t-field="doc.vehicle_id.model_id.brand_id.name"/>/<span t-raw="doc.vehicle_id.model_id.name"/>/<span t-raw="doc.vehicle_id.license_plate"/><br/>
                             <strong>Chofer</strong> : <span t-field="doc.driver.name"/><br/>
                             <strong>Unidad</strong> : <span t-field="doc.unity"/><br/>
@@ -341,12 +341,12 @@
                     <td ><span t-field="doc.others_at"  /> <span t-field="doc.others_at_comm" /></td>
                 </tr>
             </table><br/>
-            <div style="font-size:100%">
+            <div style="font-size:90%">
                 <strong>Comentarios Adicionales</strong><br/>
                 <span t-raw="doc.general_comment"/>
             </div><br/><br/>
             <table>
-                <tr style="font-size:110%">
+                <tr style="font-size:90%">
                     <th>Driver Signature</th>
                     <th>Inspector Signature</th>
                 </tr>
