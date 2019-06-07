@@ -344,7 +344,7 @@
             <div style="font-size:100%">
                 <strong>Comentarios Adicionales</strong><br/>
                 <span t-raw="doc.general_comment"/>
-            </div>
+            </div><br/>
             <table>
                 <tr style="font-size:90%">
                     <th>Driver Signature</th>
