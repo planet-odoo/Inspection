@@ -121,13 +121,13 @@
                         </span>
                     </td>
                 </tr>
-            </table><br/><br/>
-            <h4>
+            </table>
+            <h5>
                 El abajo firmante certifica que realiza esta inspección y conoce los requisitos del apéndice G del subcapítulo B del "Federal Motor Carrier Safety Regulations" (FMCSR) así como las exigencias de las leyes estatales compatibles,
                 que tiene las herramientas necesarias, y tiene la destreza para completar esta inspección, según el 49CFR 396.17:
                 Certifico que he inspeccionado este vehículo en todas las partes mencionadas y lo encuentro apto para su operación y de acuerdo a la 396.21
                 Información contenida en este documento estará disponible en la oficina del taller de esta empresa, y en el vehículo; copia de este documento pegatina y cumpliendo con la 49 CFR 396.17.
-            </h4>
+            </h5>
             <h3>
                 <strong>Inspector Signature</strong><br/>
                 <span><img t-attf-src="data:image/png;base64,#{doc.annual_digital_signature}"/></span>
