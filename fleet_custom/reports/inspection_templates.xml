@@ -2,7 +2,7 @@
     <template id="inspection_header_layout">
         <div class="header">
             <div style="float:left">
-                <img class="signature mb8" src='/fleet_custom/static/src/img/inspection.png' style="width:60%"/>
+                <img class="signature mb8" src='/fleet_custom/static/src/img/psi.png' style="width:60%"/>
             </div>
         </div>
     </template>
