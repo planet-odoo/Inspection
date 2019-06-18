@@ -1,1 +1,1 @@
-from . import inspection
+from . import inspection,mail_activity
